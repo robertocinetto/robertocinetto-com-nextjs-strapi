@@ -9,15 +9,27 @@ html {
   box-sizing: inherit;
 }
 
+li {
+  list-style-image: url("../public/check.svg");
+  list-style-position: inside;
+}
+
 @layer base {
-  h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6, p, a, li {
     font-family: Dosis,sans-serif;
   }
   h1 {
-    @apply text-5xl mb-7;
+    @apply text-6xl mb-7;
   }
   h2 {
+    @apply text-4xl mb-5;
+  }
+  h3 {
     @apply text-3xl mb-5;
+  }
+
+  h4 {
+    @apply text-3xl;
   }
   p {
     @apply mb-4;
@@ -28,5 +40,18 @@ html {
 @layer utilities {
   .underline-custom {
     @apply underline decoration-yellow-400 decoration-4;
+  }
+
+  .after-border {
+    @apply pr-5;
+  }
+
+  .after-border:after {
+      content: "";
+      border: 1px solid #fc0;
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
   }
 }
